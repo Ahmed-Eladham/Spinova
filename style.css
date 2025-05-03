@@ -1,0 +1,394 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: 
+    url('texture.png') repeat,
+    #D8ECF3;
+  background-size: 500px 500px; 
+  min-height: 100vh;
+}
+
+.navbar {
+  background: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.nav-links li a:hover img {
+  transform: scale(1.15);
+}
+
+.nav-links li a.active {
+  transform: translateY(-5px);
+}
+
+.nav-links li a.active img {
+  transform: scale(1.2);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: black;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.content {
+  padding: 20px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-top: 80px;
+}
+
+#contentTitle {
+  color: #2c3e50;
+  font-size: 2.5em;
+  font-family: 'Gagalin', sans-serif;
+}
+
+#pageContent {
+  background: url('logo.png') center/contain no-repeat;
+  height: 400px;
+  width: 400px;
+  margin: -40px auto 0;
+}
+
+.home-video-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.content-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-caption {
+  text-align: center;
+  color: #2c3e50;
+  font-family: 'Gagalin', sans-serif;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.floating-element {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1;
+  max-width: 120px;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  will-change: transform;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-15px) rotate(1deg) scale(0.99);
+  }
+  50% {
+    transform: translateY(5px) rotate(-1deg) scale(1.01);
+  }
+  75% {
+    transform: translateY(-10px) rotate(0.5deg) scale(0.98);
+  }
+}
+
+@keyframes float-alt {
+  0%, 100% {
+    transform: translateY(-5px) rotate(-1deg) scale(1.02);
+  }
+  50% {
+    transform: translateY(10px) rotate(1deg) scale(0.98);
+  }
+}
+
+.middle-section {
+  position: fixed;
+  left: 30%;
+  right: 30%;
+  top: 0;
+  bottom: 0;
+  z-index: 1001;
+  pointer-events: none;
+}
+
+.about-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin: 2rem auto;
+  max-width: 100%;
+  font-family: 'Gagalin', sans-serif;
+  text-align: center;
+}
+
+.team-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.team-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.4rem;
+  display: flex;
+  font-family: 'Gagalin', sans-serif;
+  justify-content: space-between;
+}
+
+.team-list li:last-child {
+  border-bottom: none;
+}
+
+.team-list span {
+  color: #2c3e50;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.manual-img {
+  height: auto;
+  max-width: 100%;
+  margin: 2rem auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.blood-article {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.blood-type-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.blood-img {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.centered-blood-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.blood-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  text-align: center;
+  display: inline-block;
+}
+
+.rh-factor {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.test-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 2rem 0;
+}
+
+.test-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.test-icon {
+  height: 120px;
+  width: auto;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.test-icon:hover {
+  transform: scale(1.1);
+}
+
+.compatibility-chart {
+  max-width: 800px;
+  width: 100%;
+  margin: 2rem auto;
+  display: block;
+}
+
+.compatibility-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.compatibility-table td, 
+.compatibility-table th {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.compatibility-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.blood-article h2,
+.blood-article h3,
+.blood-type-content p,
+.rh-factor,
+.blood-list li,
+.test-card ul,
+.compatibility-table {
+  font-family: 'Gagalin', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links li a img {
+    height: 60px;
+    margin: 15px 0;
+  }
+
+  #contentTitle {
+    font-size: 2.2em;
+  }
+
+  #pageContent {
+    height: 300px;
+    width: 300px;
+  }
+
+  .about-content {
+    padding: 0 15px;
+  }
+
+  .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .team-list li {
+    flex-direction: column;
+    font-size: 1.2rem;
+  }
+
+  .team-list span {
+    margin-top: 0.3rem;
+    font-size: 1.1rem;
+  }
+
+  .manual-img {
+    max-width: 70%;
+  }
+
+  .blood-img {
+    max-width: 100%;
+  }
+
+  .centered-blood-content {
+    padding: 0 15px;
+  }
+
+  .blood-list {
+    text-align: center;
+  }
+
+  .test-results {
+    grid-template-columns: 1fr;
+  }
+
+  .test-icon {
+    height: 80px;
+    margin-bottom: 1.5rem;
+  }
+}
